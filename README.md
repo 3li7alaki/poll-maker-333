@@ -5,8 +5,8 @@ This is a simple poll maker website built using PHP, MySQL, HTML, CSS, and JavaS
 ## Project Team
 
 - Student 1: `Ali Housam AlHalaki` `202103108`
-- Student 2: `Add your name here` `Add your ID here`
-- Student 3: `Add your name here` `Add your ID here`
+- Student 2: `Ayoub Fouad Mohammed` `202105172`
+- Student 3: `Abdullah Ali Ebrahim` `202010294`
 - Student 4: `Add your name here` `Add your ID here`
 - Student 5: `Add your name here` `Add your ID here`
 
