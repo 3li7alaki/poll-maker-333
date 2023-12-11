@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <title>sign up</title>
+</head>
+<body>
+
+    <div class="a1">
+
+        <br>
+        <h1>Sign up</h1>
+        <form action="sign.php" method="post" onsubmit="return checkpass()">
+            <input type="text" name="un" placeholder="User name"><br><br>
+            <input type="text" name="email" placeholder="Email"><br><br>
+            <input type="password" name="pass" placeholder="Password" id="p1"><br><br>
+            <input type="password" name="passc" placeholder=" Confirm Password" id="p2"><br><br>
+            <button type="submit" class="sign" >Sign-up</button>
+    
+        </form>
+        <p >already a user? click to 
+        <a href="login.html">login</a></p>  <br>
+    </div>
+
+    <script>
+        function checkpass(){
+            const p1 = document.getElementById("p1").value;
+            const p2 = document.getElementById("p2").value;
+
+            const reg = /(?=.*[A-Z])(?=.*[0-9])(?=.*[@#%_\*\-]){8,16}/;
+
+            if (p1 != p2){
+                alert("Password is not identical!");
+                return false;
+            }
+            if(!(p1.match(reg)))
+            {
+                alert("Your password should have at least one uppercase letter and one digit and one special character ");
+                return false
+            }
+        }
+    </script>
+</body>
+</html>

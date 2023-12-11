@@ -1,0 +1,43 @@
+
+
+html {
+    background:linear-gradient(200deg,rgb(110, 109, 95) , rgb(214, 34, 76), rgb(110, 109, 95) );
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+}
+
+
+
+
+.a1 {
+    
+    width: 400px;
+    border-radius: 20px;
+    background-color:whitesmoke;
+    border: 5px solid salmon;
+    min-height: 400px;
+    margin: 50px 50px;
+    justify-content: center;
+
+}
+
+.a1 h1 {
+
+    padding: 10px;
+    color:black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.a1 form {
+    text-align: left;
+    padding: 10px;
+}
+
+.a1 form input {
+    width: 300px;
+    text-align: left;
+    padding: 10px;
+    border: 2px solid tomato;
+
+}
+

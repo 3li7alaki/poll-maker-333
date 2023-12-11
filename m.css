@@ -1,0 +1,112 @@
+
+
+body {
+    background:linear-gradient(200deg,rgb(110, 109, 95) , rgb(214, 34, 76), rgb(110, 109, 95) );
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+}
+
+
+header{
+    background-color: white;
+    min-height: 70px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:auto;
+
+}
+
+header p {
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+nav a{
+   
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: 600;
+   
+   
+}
+
+nav a:hover{
+    color: salmon; 
+}
+
+
+
+
+.a1 {
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: white;
+    justify-content: center;
+    padding: 5px;
+}
+
+#a3 {
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: white;
+    justify-content: center;
+    padding: 5px;
+}
+
+.a1 h1 {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+
+#a2 {
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: white;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+#p1 {
+    color: salmon;
+    font-size: 20px;
+ 
+}
+
+.a4{
+ 
+    display: inline;
+    color: salmon;
+    font-size: 20px;
+
+}
+
+.a5 {
+
+    background-color: black;
+    border-radius: 20px;
+    padding: 5px;
+    width: 500px;
+    height: 20px;
+
+}
+
+.a6 {
+ 
+    background-color: salmon;
+    border-radius: 20px;
+   padding-right: 100px;
+ 
+}
+
+.a1 a { 
+    text-decoration: none;
+    background-color: ghostwhite;
+    color: salmon;
+   
+}

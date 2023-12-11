@@ -1,0 +1,9 @@
+.a5 {
+    color: white;
+    background-color: salmon;
+    border-radius: 20px;
+    padding: 5px;
+    border-right: 100px solid black;
+    border-left: 100px solid salmon;
+    border-width: 500px;
+}

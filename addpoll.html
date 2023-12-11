@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ad.css">
+    <title>add poll</title>
+</head>
+<body>
+    <div class="a1">
+        <h1>create poll</h1>
+        <form action="addpoll.php" method="post">
+           <input type="text" name="q" placeholder=" Question Title "><br><br>
+           End Date:<input type="date" name="ed"><br><br>
+            category <select name="cat" ><br>
+                <option value="Travel">Travel</option>
+                <option value="Sport">Sport</option>
+                <option value="Education">Entertainment</option>
+                <option value="Business">Business</option>
+                <option value="Education">Education</option>
+            </select><br><br>
+            <div id="c1">
+             <input type="text" name="c[]" placeholder=" Choice 1 "><br><br>
+             <input type="text" name="c[]" placeholder=" Choice 2 "><br><br>
+            </div>
+         
+                <input type="submit" value="Create" name="create" style="width: 80px;">
+                <input type="button" value="+" onclick="addMore()" style="width: 40px; ">
+        </form>
+
+    </div>
+
+    <script>
+        let count = 2;
+        function addMore(){
+            if(count==5){
+              alert("You are allowed to put 5 choices only");
+            }else{
+            count++;
+           string = "<input type='text' name='c[]' placeholder='Choice"+count+"'><br><br>";
+                document.getElementById("c1").innerHTML +=  string;
+            }
+        }
+
+    </script>
+</body>
+</html>
