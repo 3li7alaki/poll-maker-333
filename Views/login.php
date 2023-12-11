@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <script src="../Scripts/validate.js"></script>
-    <link rel="stylesheet" href="../Stylesheets/register.css">
+    <link rel="stylesheet" href="../Stylesheets/auth.css">
     <link rel="icon" href="../Images/favicon.ico" type="image/x-icon">
 </head>
 <body>
