@@ -1,6 +1,8 @@
 <?php
 
 use Models\User;
+
+require 'dependencies.php';
 require 'auth.php';
 
 if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {

@@ -1,0 +1,65 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(45,0,255,0.73);
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.poll {
+    width: 27.5%;
+    height: fit-content;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 50px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+}
+
+.poll:hover {
+    scale: 1.1;
+    transition: 0.2s;
+}
+
+.poll h2 {
+    text-align: center;
+    margin: 0 0 5px;
+    color: rgba(45,0,255,0.73);
+}
+
+.poll h3 {
+    text-align: center;
+    margin: 0 0 20px;
+    font-size: 1rem;
+    font-weight: lighter;
+    color: rgba(45,0,255,0.65);
+}
+
+.bar {
+    height: 5px;
+    background-color: rgba(45,0,255,0.73);
+    border-radius: 10px;
+    margin: 0 0 10px;
+}
+
+p {
+    margin: 0 0 10px;
+}

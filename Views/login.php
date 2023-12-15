@@ -10,20 +10,15 @@
 </head>
 <body>
 
-<?php
-if (isset($error)) {
-    echo '<div class="error">' . $error . '</div>';
-}
-?>
 <div class="container">
     <main>
         <h1>Login</h1>
         <form action="../Controllers/login.php" method="post">
             <label for="email">Email:</label>
             <input type="text" name="email" id="email" oninput="validateEmail(false)" value="<?php echo isset($email) ? htmlspecialchars($email) : ''; ?>" required>
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" required>
-            <input id="login" type="submit" value="Login" disabled>
+            <label for="password">Password:<?php if (isset($error)) echo '<small> '.$error.'</small>'?></label>
+            <input type="password" name="password" id="password" required oninput="validateEmail()">
+            <input id="submit" type="submit" value="Login" disabled>
         </form>
     </main>
 </div>

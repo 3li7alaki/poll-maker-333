@@ -19,7 +19,7 @@ class Poll
     public static function All($category = null) {
         global $db;
         if ($category != null)
-            return $db->query('SELECT * FROM polls WHERE category = "' . $category . '"')->fetchAll(\PDO::FETCH_CLASS, self::class);
+            return $db->query('SELECT * FROM polls WHERE category LIKE "' . $category . '"')->fetchAll(\PDO::FETCH_CLASS, self::class);
         else
             return $db->query('SELECT * FROM polls')->fetchAll(\PDO::FETCH_CLASS, self::class);
     }
@@ -32,7 +32,7 @@ class Poll
             $query->execute([
                 'title' => $this->title,
                 'category' => $this->category,
-                'end_date' => $this->end_date,
+                'end_date' => $this->end_date ? : null,
                 'user_id' => $this->user_id,
             ]);
             $this->id = $db->lastInsertId();
@@ -79,5 +79,10 @@ class Poll
     public function votes() {
         global $db;
         return $db->query('SELECT * FROM votes WHERE poll_id = ' . $this->id)->rowCount();
+    }
+
+    public static function categories() {
+        global $db;
+        return $db->query('SELECT DISTINCT category FROM polls')->fetchAll(\PDO::FETCH_COLUMN);
     }
 }

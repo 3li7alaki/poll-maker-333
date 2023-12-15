@@ -1,8 +1,8 @@
 <?php
 
 use Models\User;
-require '../Models/User.php';
 
+require 'dependencies.php';
 function exists($email) {
     echo User::emailExists($email);
     exit();

@@ -6,7 +6,7 @@ function validateForm() {
     validateEmail(true);
     validatePassword();
     confirm();
-    document.getElementById("register").disabled = !(validEmail && validPassword && confirmed);
+    document.getElementById("submit").disabled = !(validEmail && validPassword && confirmed);
 }
 function validateEmail(register) {
     let email = document.getElementById("email").value;
@@ -16,7 +16,7 @@ function validateEmail(register) {
     }
 
     function invalid(msg) {
-        document.querySelector("label" + "[for='email']").innerHTML = "Email: " + msg;
+        document.querySelector("label" + "[for='email']").innerHTML = "Email: <small>"+msg+"</small>";
         document.getElementById("email").classList.remove("valid");
         document.getElementById("email").classList.add("invalid");
         validEmail = false;
@@ -32,12 +32,12 @@ function validateEmail(register) {
     // Check if email is an email
     let emailRegex = /^\S+@\S+\.\S+$/;
     if (!emailRegex.test(email)) {
-        document.getElementById("login").disabled = true;
+        document.getElementById("submit").disabled = true;
         return invalid("Not a valid email");
     }
     // Check if email exists in database using ajax call
     if (!register) {
-        document.getElementById("login").disabled = false;
+        document.getElementById("submit").disabled = false;
         return valid();
     }
     let xhr = new XMLHttpRequest();
