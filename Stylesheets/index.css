@@ -16,14 +16,16 @@ body {
 }
 
 main {
-    width: 95%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .poll {
     width: 27.5%;
+    min-width: 20%;
     height: fit-content;
     border: 1px solid #ccc;
     background-color: white;
@@ -37,6 +39,15 @@ main {
 .poll:hover {
     scale: 1.1;
     transition: 0.2s;
+    & .bar {
+        background-color: rgba(45,0,255,0.73);
+        transition: 0.2s;
+        height: 5px;
+    }
+    & .stats {
+        font-size: 0.8rem;
+        transition: 0.2s;
+    }
 }
 
 .poll h2 {
@@ -54,12 +65,31 @@ main {
 }
 
 .bar {
-    height: 5px;
-    background-color: rgba(45,0,255,0.73);
+    height: 0;
+    transition: 0.2s;
     border-radius: 10px;
     margin: 0 0 10px;
 }
 
 p {
     margin: 0 0 10px;
+}
+
+.expiry {
+    text-align: center;
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: lighter;
+    color: grey;
+}
+
+.stats {
+    transition: 0.2s;
+    font-size: 0;
+}
+
+@media (max-width: 768px) {
+    .poll {
+        min-width: 40%;
+    }
 }

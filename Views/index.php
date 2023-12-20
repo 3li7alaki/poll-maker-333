@@ -29,19 +29,19 @@ require '../Templates/navbar.php';
         echo "<h3>" . $poll->category . "</h3>";
         $options = $poll->options();
         $votes = $poll->votes();
-        echo "<p>Total Votes: " . $votes . "</p>";
+        echo "<p class='stats'>Total Votes: " . $votes . "</p>";
         $votes = $votes > 0 ? $votes : 1;
         foreach ($options as $option) {
             $optionVotes = $option->votes();
             $percent = round($optionVotes / $votes * 100);
             echo "<p>" . $option->option_text . "</p>";
-            echo "<div class='stats'>";
+            echo "<div>";
             echo "<div class='bar' style='width: " . $percent . "%'></div>";
-            echo "<p>" . $optionVotes. " votes, ". $percent . "%</p>";
+            echo "<p class='stats'>" . $optionVotes. " votes, ". $percent . "%</p>";
             echo "</div>";
         }
         if ($poll->end_date) {
-            echo "<p style='text-align: center; margin: 0'>Ends: " . $poll->end_date . "</p>";
+            echo "<p class='expiry''>Ends: " . $poll->end_date . "</p>";
         }
         echo "</div>";
     }
