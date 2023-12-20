@@ -96,13 +96,13 @@ class User
         return $db->query('SELECT * FROM options WHERE id IN (SELECT option_id FROM votes WHERE user_id = ' . $this->id . ' AND poll_id = ' . $poll->id . ')')->fetchObject(Option::class);
     }
 
-    public function vote($poll, $option) {
+    public function vote($poll_id, $option_id) {
         global $db;
         $query = $db->prepare('INSERT INTO votes (user_id, poll_id, option_id) VALUES (:user_id, :poll_id, :option_id)');
         $query->execute([
             'user_id' => $this->id,
-            'poll_id' => $poll->id,
-            'option_id' => $option->id,
+            'poll_id' => $poll_id,
+            'option_id' => $option_id,
         ]);
         return $query->rowCount() == 1;
     }
