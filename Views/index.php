@@ -16,17 +16,25 @@ session_start();
     <link rel="stylesheet" href="../Stylesheets/index.css">
     <link rel="stylesheet" href="../Stylesheets/navbar.css">
     <link rel="icon" href="../Images/favicon.ico" type="image/x-icon">
+    <script src="../Scripts/index.js"></script>
 </head>
 <body>
 <?php
 require '../Templates/navbar.php';
     $polls = Poll::All();
     echo "<div class='container'>";
+    echo "<input type='text' id='search' placeholder='Search...' oninput='searchPolls()'>";
+    echo "<select id='category' oninput='categoryFilter(this)'>";
+    echo "<option value='' selected>All</option>";
+    foreach (Poll::categories() as $category) {
+        echo "<option value='" . $category . "'>" . $category . "</option>";
+    }
+    echo "</select>";
     echo "<main>";
     foreach ($polls as $poll) {
-        echo "<div class='poll' ondblclick=''>";
-        echo "<h2>" . $poll->title . "</h2>";
-        echo "<h3>" . $poll->category . "</h3>";
+        echo "<div class='poll' ondblclick='viewPoll(this)' id='$poll->id'>";
+        echo "<h2 class='title'>" . $poll->title . "</h2>";
+        echo "<h3 class='category'>" . $poll->category . "</h3>";
         $options = $poll->options();
         $votes = $poll->votes();
         echo "<p class='stats'>Total Votes: " . $votes . "</p>";
