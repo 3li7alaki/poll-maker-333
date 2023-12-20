@@ -25,5 +25,5 @@ function categoryFilter(select) {
 }
 
 function viewPoll(poll) {
-    window.location.href = "/viewPoll.php?pollId=" + poll.id;
+    window.location.href = "viewPoll.php?pollId=" + poll.id;
 }
