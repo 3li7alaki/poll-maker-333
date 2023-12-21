@@ -91,9 +91,9 @@ class User
         return $this->is_admin == 1;
     }
 
-    public function getVote($poll) {
+    public function getVote($poll_id) {
         global $db;
-        return $db->query('SELECT * FROM options WHERE id IN (SELECT option_id FROM votes WHERE user_id = ' . $this->id . ' AND poll_id = ' . $poll->id . ')')->fetchObject(Option::class);
+        return $db->query('SELECT * FROM options WHERE id IN (SELECT option_id FROM votes WHERE user_id = ' . $this->id . ' AND poll_id = ' . $poll_id . ')')->fetchObject(Option::class);
     }
 
     public function vote($poll_id, $option_id) {
