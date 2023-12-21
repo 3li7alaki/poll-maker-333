@@ -8,7 +8,7 @@ This is a simple poll maker website built using PHP, MySQL, HTML, CSS, and JavaS
 - Student 2: `Ayoub Fouad Mohammed` `202105172`
 - Student 3: `Abdullah Ali Ebrahim` `202010294`
 - Student 4: `Ali sami abdulla` `202102423`
-- Student 5: `Add your name here` `Add your ID here`
+- Student 5: `Rashed Khalaf Nazal` `202104676`
 
 ## Website Features
 
