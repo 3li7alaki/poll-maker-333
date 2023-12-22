@@ -3,5 +3,5 @@
 session_start();
 
 unset($_SESSION['user']);
-header('Location: ../Views/Index.php');
+header('Location: ../Views/index.php');
 exit();
