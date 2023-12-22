@@ -51,6 +51,15 @@ class Poll
         }
     }
 
+    public function delete() {
+        global $db;
+        $query = $db->prepare('DELETE FROM polls WHERE id = :id');
+        $query->execute([
+            'id' => $this->id,
+        ]);
+        return $query->rowCount() == 1;
+    }
+
     public function end() {
         global $db;
         $query = $db->prepare('UPDATE polls SET end_date = :end_date WHERE id = :id');

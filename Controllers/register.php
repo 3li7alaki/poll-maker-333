@@ -2,12 +2,12 @@
 
 use Models\User;
 
-require 'dependencies.php';
 require 'auth.php';
 
 if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
     if ($_POST['password'] !== $_POST['confirmPassword']) {
-        header('Location: ../Views/register.html');
+        var_dump($_POST);
+//        header('Location: ../Views/register.html');
         exit();
     }
     $user = new User();

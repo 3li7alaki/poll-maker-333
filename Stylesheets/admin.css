@@ -1,0 +1,90 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(45,0,255,0.73);
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    margin: 100px 0 0;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+h1 {
+    margin: 0 0 20px;
+    font-size: 3rem;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.polls, .users {
+    background-color: white;
+    height: fit-content;
+    width: 45%;
+    border-radius: 30px;
+    padding: 10px 10px 30px;
+}
+
+h2 {
+    margin: 0;
+    padding: 20px;
+    font-size: 2rem;
+    text-align: center;
+    color: rgba(45,0,255,0.73);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    overflow: scroll;
+}
+
+td, th {
+    padding: 15px 10px;
+    border-bottom: 2px solid rgba(45,0,255,0.73);
+}
+
+tbody tr {
+    transition: 0.2s;
+}
+
+th {
+    color: rgba(45,0,255,0.73);
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+tbody tr:hover {
+    background-color: rgba(45,0,255,0.73);
+    color: white;
+    & a {
+        background-color: white;
+        color: rgba(45,0,255,0.73);
+        text-decoration: none;
+        transition: 0.2s;
+    }
+    transition: 0.2s;
+}
+
+table a {
+    text-decoration: none;
+    transition: 0.2s;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    background-color: rgba(45,0,255,0.73);
+}

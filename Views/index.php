@@ -38,6 +38,7 @@ require '../Templates/navbar.php';
         echo "<div class='poll' ondblclick='viewPoll(this)' id='$poll->id'>";
         echo "<h2 class='title'>" . $poll->title . "</h2>";
         echo "<h3 class='category'>" . $poll->category . "</h3>";
+        echo "<p class='author'>By: " . $poll->user()->name . "</p>";
         $options = $poll->options();
         $votes = $poll->votes();
         echo "<p class='stats'>Total Votes: " . $votes . "</p>";

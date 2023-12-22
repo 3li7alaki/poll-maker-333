@@ -11,6 +11,7 @@ $vote = $user->getVote($pollId);
 echo "<div class='poll'>";
 echo "<h2 class='title'>" . $poll->title . "</h2>";
 echo "<h3 class='category'>" . $poll->category . "</h3>";
+echo "<p class='author'>By: " . $poll->user()->name . "</p>";
 echo "<form action='../Controllers/vote.php' method='post'>";
 echo "<input type='hidden' name='poll_id' value='" . $poll->id . "'>";
 $options = $poll->options();
@@ -33,6 +34,14 @@ foreach ($options as $option) {
 echo "</form>";
 if ($poll->end_date) {
     echo "<p class='expiry''>Ends: " . $poll->end_date . "</p>";
+    if (strtotime($poll->end_date) < time()) {
+        echo "<form action='../Controllers/deletePoll.php' method='post'>";
+        echo "<input type='hidden' name='poll_id' value='" . $poll->id . "'>";
+        echo "<div class='end'>";
+        echo "<input id='end' type='submit' value='Delete poll'/>";
+        echo "</div>";
+        echo "</form>";
+    }
 } else if ($poll->user_id == $_SESSION['user']->id) {
     echo "<form action='../Controllers/endPoll.php' method='post'>";
     echo "<input type='hidden' name='poll_id' value='" . $poll->id . "'>";

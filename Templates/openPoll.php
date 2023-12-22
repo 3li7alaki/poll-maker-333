@@ -9,6 +9,7 @@ $poll = Poll::find($pollId);
 echo "<div class='poll'>";
 echo "<h2 class='title'>" . $poll->title . "</h2>";
 echo "<h3 class='category'>" . $poll->category . "</h3>";
+echo "<p class='author'>By: " . $poll->user()->name . "</p>";
 echo "<form action='../Controllers/vote.php' method='post'>";
 echo "<input type='hidden' name='poll_id' value='" . $poll->id . "'>";
 $options = $poll->options();
@@ -37,6 +38,7 @@ if ($poll->end_date) {
     echo "<div class='end'>";
     echo "<input id='end' type='submit' value='End poll'/>";
     echo "</div>";
+    echo "</form>";
 }
 
 echo "</div>";
