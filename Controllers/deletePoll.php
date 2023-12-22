@@ -19,4 +19,4 @@ if (isset($_POST['poll_id'])) {
     exit();
 }
 
-header('Location: ../Views/Index.php');
+header('Location: ../Views/index.php');

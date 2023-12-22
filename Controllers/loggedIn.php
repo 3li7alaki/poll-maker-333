@@ -3,6 +3,6 @@
 session_start();
 
 if (!isset($_SESSION['user'])) {
-    header('Location: ../Views/Login.php');
+    header('Location: ../Views/login.php');
     exit();
 }
