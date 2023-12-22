@@ -16,7 +16,7 @@
         echo '<a href="myPolls.php">My Polls</a>';
         echo '<a href="../Controllers/logout.php">Logout</a>';
     } else {
-        echo '<a href="Login.php">Login</a>';
+        echo '<a href="login.php">Login</a>';
     }
     if (isset($admin) && $admin) {
         echo '<a href="admin.php">Admin</a>';
