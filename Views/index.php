@@ -23,6 +23,7 @@ session_start();
 require '../Templates/navbar.php';
     $polls = Poll::All();
     echo "<div class='container'>";
+    echo "<div class='filter'>";
     echo "<input type='text' id='search' placeholder='Search...' oninput='searchPolls()'>";
     echo "<select id='category' oninput='categoryFilter(this)'>";
     echo "<option value='' selected>All</option>";
@@ -30,6 +31,7 @@ require '../Templates/navbar.php';
         echo "<option value='" . $category . "'>" . $category . "</option>";
     }
     echo "</select>";
+    echo "</div>";
     echo "<main>";
     foreach ($polls as $poll) {
         echo "<div class='poll' ondblclick='viewPoll(this)' id='$poll->id'>";

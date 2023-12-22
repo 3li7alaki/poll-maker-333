@@ -19,6 +19,7 @@
             <label for="password">Password:<?php if (isset($error)) echo '<small> '.$error.'</small>'?></label>
             <input type="password" name="password" id="password" required oninput="validateEmail()">
             <input id="submit" type="submit" value="Login" disabled>
+            <a href="register.html"><input id="register" type="button" value="Register"></a>
         </form>
     </main>
 </div>

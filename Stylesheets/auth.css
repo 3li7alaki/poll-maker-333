@@ -90,16 +90,30 @@ input[type="checkbox"] {
     margin: 5px;
 }
 
-input[type="submit"] {
-    margin: 20px 0;
+input[type="submit"], #register {
+    margin: 20px 0 10px;
     width: 80%;
     height: 40px;
 }
 
-input[type="submit"]:enabled {
+input[type="submit"]:enabled , #register {
     background-color: rgba(45,0,255,0.73);
     color: white;
     border: none;
     border-radius: 20px;
+    font-weight: bold;
     cursor: pointer;
+}
+
+a {
+    margin: 0;
+    width: 75%;
+    text-align: center;
+}
+
+#register {
+    margin: 10px 0 20px;
+    background-color: white;
+    color: rgba(45,0,255,0.73);
+    border: 2px solid rgba(45,0,255,0.73);
 }

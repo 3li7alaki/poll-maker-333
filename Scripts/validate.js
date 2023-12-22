@@ -12,7 +12,9 @@ function validateEmail(register) {
     let email = document.getElementById("email").value;
 
     if (!email) {
-        return
+        document.getElementById("submit").disabled = true;
+            invalid("Email cannot be empty")
+        return;
     }
 
     function invalid(msg) {

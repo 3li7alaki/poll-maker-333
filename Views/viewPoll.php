@@ -25,19 +25,27 @@ session_start();
 
     $pollId = $_GET['pollId'];
     $poll = Poll::find($pollId);
+    $expired = false;
+
+    if ($poll->end_date) {
+        $expired = strtotime($poll->end_date) < time();
+    }
 
     echo "<div class='container'>";
     echo "<main>";
     if (isset($_SESSION['user'])) {
         $user = $_SESSION['user'];
         $vote = $user->getVote($pollId);
-        if (!$vote) {
+        if (!$vote && !$expired) {
             require '../Templates/openPoll.php';
         } else {
             require '../Templates/disabledPoll.php';
         }
-    } else
+    } else if (!$expired) {
         require '../Templates/openPoll.php';
+    } else {
+        require '../Templates/disabledPoll.php';
+    }
     echo "</main>";
     echo "</div>";
     
