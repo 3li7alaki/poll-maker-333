@@ -31,8 +31,9 @@ main {
 }
 
 .polls, .users {
+    overflow: auto;
+    height: 500px;
     background-color: white;
-    height: fit-content;
     width: 45%;
     border-radius: 30px;
     padding: 10px 10px 30px;
@@ -50,7 +51,6 @@ table {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
-    overflow: scroll;
 }
 
 td, th {
@@ -63,9 +63,13 @@ tbody tr {
 }
 
 th {
+    position: sticky;
     color: rgba(45,0,255,0.73);
     font-weight: bolder;
     font-size: 1.2rem;
+    top: 0;
+    z-index: 1;
+    background-color: white;
 }
 
 tbody tr:hover {
@@ -87,4 +91,8 @@ table a {
     border-radius: 20px;
     color: white;
     background-color: rgba(45,0,255,0.73);
+}
+
+::-webkit-scrollbar {
+    width: 0;
 }

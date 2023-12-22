@@ -26,7 +26,7 @@ require '../Templates/navbar.php';
     <h1>Admin Page</h1>
     <main>
         <div class="polls">
-            <h2>Polls</h2>
+            <h2>Polls: <?= count(Poll::All()) ?></h2>
             <table>
                 <thead>
                 <tr>
@@ -53,7 +53,7 @@ require '../Templates/navbar.php';
             </table>
         </div>
         <div class="users">
-            <h2>Users</h2>
+            <h2>Users: <?= count(User::All()) ?></h2>
             <table>
                 <thead>
                 <tr>
