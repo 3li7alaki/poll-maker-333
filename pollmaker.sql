@@ -198,9 +198,9 @@ ALTER TABLE `polls`
 --
 -- Indexes for table `users`
 --
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ALTER TABLE `users`
+    ADD PRIMARY KEY (`id`),
+    ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `votes`
