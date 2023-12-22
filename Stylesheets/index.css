@@ -11,6 +11,7 @@ body {
     width: 100%;
     margin: 100px 0 0;
     display: flex;
+    flex-wrap: nowrap;
     flex-direction: column;
     align-items: center;
 }
@@ -20,6 +21,12 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+h1 {
+    margin: 0 0 20px;
+    font-size: 3rem;
+    color: white;
 }
 
 .poll {

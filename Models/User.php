@@ -42,6 +42,21 @@ class User
         return $query->rowCount() == 1;
     }
 
+    public function refresh() {
+        global $db;
+        $query = $db->prepare('SELECT * FROM users WHERE id = :id');
+        $query->execute([
+            'id' => $this->id,
+        ]);
+        $user = $query->fetchObject(self::class);
+        $this->name = $user->name;
+        $this->email = $user->email;
+        $this->password = $user->password;
+        $this->is_admin = $user->is_admin;
+        $this->time_created = $user->time_created;
+        $this->time_updated = $user->time_updated;
+    }
+
     public function delete() {
         global $db;
         $query = $db->prepare('DELETE FROM users WHERE id = :id');
@@ -94,6 +109,11 @@ class User
     public function getVote($poll_id) {
         global $db;
         return $db->query('SELECT * FROM options WHERE id IN (SELECT option_id FROM votes WHERE user_id = ' . $this->id . ' AND poll_id = ' . $poll_id . ')')->fetchObject(Option::class);
+    }
+
+    public function voted($poll_id) {
+        global $db;
+        return $db->query('SELECT * FROM votes WHERE user_id = ' . $this->id . ' AND poll_id = ' . $poll_id)->rowCount() == 1;
     }
 
     public function vote($poll_id, $option_id) {

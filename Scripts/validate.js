@@ -2,10 +2,15 @@ let validEmail = false;
 let validPassword = false;
 let confirmed = false;
 
-function validateForm() {
-    validateEmail(true);
+function validateForm(mode) {
+    if (mode !== "profile") {
+        validateEmail(true);
+    } else
+        validEmail = true;
+
     validatePassword();
     confirm();
+    console.log(validEmail, validPassword, confirmed);
     document.getElementById("submit").disabled = !(validEmail && validPassword && confirmed);
 }
 function validateEmail(register) {

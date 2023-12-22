@@ -6,6 +6,10 @@ require 'dependencies.php';
 require 'auth.php';
 
 if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
+    if ($_POST['password'] !== $_POST['confirmPassword']) {
+        header('Location: ../Views/register.html');
+        exit();
+    }
     $user = new User();
     $user->name = htmlspecialchars($_POST['name']);
     $user->email = htmlspecialchars($_POST['email']);

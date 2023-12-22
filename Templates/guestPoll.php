@@ -19,24 +19,18 @@ foreach ($options as $option) {
     $optionVotes = $option->votes();
     $percent = round(($optionVotes) / ($votes) * 100);
     echo "<div class='option'>";
-    echo "<input required id='$option->id' type='radio' name='option_id' value='" . $option->id . "'>";
+    echo "<input id='$option->id' type='radio' name='option_id' value='" . $option->id . "' required>";
     echo "<label for='$option->id'>$option->option_text</label>";
     echo "<div class='bar' style='width: " . $percent . "%'></div>";
     echo "<p class='stats'>" . $optionVotes. " votes, ". $percent . "%</p>";
     echo "</div>";
 }
 echo "<div class='vote'>";
-echo "<input type='submit' value='Vote'/>";
+echo "<input id='vote' type='submit' value='Vote'/>";
 echo "</div>";
 echo "</form>";
 if ($poll->end_date) {
     echo "<p class='expiry''>Ends: " . $poll->end_date . "</p>";
-} else if ($poll->user_id == $_SESSION['user']->id) {
-    echo "<form action='../Controllers/endPoll.php' method='post'>";
-    echo "<input type='hidden' name='poll_id' value='" . $poll->id . "'>";
-    echo "<div class='end'>";
-    echo "<input id='end' type='submit' value='End poll'/>";
-    echo "</div>";
 }
 
 echo "</div>";

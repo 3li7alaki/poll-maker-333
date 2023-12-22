@@ -1,1 +1,6 @@
-DirectoryIndex Views/index.php
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^$  Views
+</IfModule>
+
+DirectoryIndex index.php

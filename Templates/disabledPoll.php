@@ -26,15 +26,19 @@ foreach ($options as $option) {
     else
         echo "<input id='$option->id' type='radio' name='option_id' value='" . $option->id . "' disabled>";
     echo "<label for='$option->id'>$option->option_text</label>";
-    echo "<div>";
     echo "<div class='bar' style='width: " . $percent . "%'></div>";
     echo "<p class='stats'>" . $optionVotes. " votes, ". $percent . "%</p>";
-
     echo "</div>";
 }
 echo "</form>";
 if ($poll->end_date) {
     echo "<p class='expiry''>Ends: " . $poll->end_date . "</p>";
+} else if ($poll->user_id == $_SESSION['user']->id) {
+    echo "<form action='../Controllers/endPoll.php' method='post'>";
+    echo "<input type='hidden' name='poll_id' value='" . $poll->id . "'>";
+    echo "<div class='end'>";
+    echo "<input id='end' type='submit' value='End poll'/>";
+    echo "</div>";
 }
 
 echo "</div>";

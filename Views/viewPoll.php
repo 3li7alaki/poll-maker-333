@@ -41,10 +41,8 @@ session_start();
         } else {
             require '../Templates/disabledPoll.php';
         }
-    } else if (!$expired) {
-        require '../Templates/openPoll.php';
     } else {
-        require '../Templates/disabledPoll.php';
+        require '../Templates/guestPoll.php';
     }
     echo "</main>";
     echo "</div>";

@@ -16,6 +16,7 @@ session_start();
     <link rel="stylesheet" href="../Stylesheets/index.css">
     <link rel="stylesheet" href="../Stylesheets/navbar.css">
     <link rel="icon" href="../Images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../Scripts/index.js"></script>
 </head>
 <body>
