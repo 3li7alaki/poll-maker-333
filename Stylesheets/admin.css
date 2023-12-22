@@ -96,3 +96,12 @@ table a {
 ::-webkit-scrollbar {
     width: 0;
 }
+
+@media only screen and (max-width: 1000px) {
+    .polls, .users {
+        width: 90%;
+    }
+    .users {
+        margin: 20px 0;
+    }
+}

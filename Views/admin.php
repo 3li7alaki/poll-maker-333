@@ -81,7 +81,11 @@ require '../Templates/navbar.php';
                             ?></td>
                         <td><?= count($user->votedPolls()) ?></td>
                         <td><?= $user->time_created ?></td>
+                        <?php if ($user->is_admin == 1): ?>
+                            <td>Admin</td>
+                        <?php else: ?>
                         <td><a href="../Controllers/deleteUser.php?id=<?= $user->id ?>">Delete</a></td>
+                        <?php endif; ?>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>

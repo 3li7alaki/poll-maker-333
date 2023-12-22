@@ -16,7 +16,7 @@ class User
 
     public static function All() {
         global $db;
-        return $db->query('SELECT * FROM users WHERE is_admin IS NULL')->fetchAll(\PDO::FETCH_CLASS, self::class);
+        return $db->query('SELECT * FROM users')->fetchAll(\PDO::FETCH_CLASS, self::class);
     }
 
     public function create() {
