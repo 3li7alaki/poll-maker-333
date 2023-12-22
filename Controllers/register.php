@@ -6,8 +6,7 @@ require 'auth.php';
 
 if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
     if ($_POST['password'] !== $_POST['confirmPassword']) {
-        var_dump($_POST);
-//        header('Location: ../Views/register.html');
+        header('Location: ../Views/register.html');
         exit();
     }
     $user = new User();
