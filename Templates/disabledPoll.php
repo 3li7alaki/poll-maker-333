@@ -34,7 +34,7 @@ foreach ($options as $option) {
 echo "</form>";
 if ($poll->end_date) {
     echo "<p class='expiry''>Ends: " . $poll->end_date . "</p>";
-    if (strtotime($poll->end_date) < time()) {
+    if (strtotime($poll->end_date) < time() && $poll->user_id == $_SESSION['user']->id) {
         echo "<form action='../Controllers/deletePoll.php' method='post'>";
         echo "<input type='hidden' name='poll_id' value='" . $poll->id . "'>";
         echo "<div class='end'>";
