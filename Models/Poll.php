@@ -19,9 +19,9 @@ class Poll
     public static function All($category = null) {
         global $db;
         if ($category != null)
-            return $db->query('SELECT * FROM polls WHERE category LIKE "' . $category . '"')->fetchAll(\PDO::FETCH_CLASS, self::class);
+            return $db->query('SELECT * FROM polls WHERE category LIKE "' . $category . '" ORDER BY time_created DESC')->fetchAll(\PDO::FETCH_CLASS, self::class);
         else
-            return $db->query('SELECT * FROM polls')->fetchAll(\PDO::FETCH_CLASS, self::class);
+            return $db->query('SELECT * FROM polls ORDER BY time_created DESC')->fetchAll(\PDO::FETCH_CLASS, self::class);
     }
 
     public function create() {

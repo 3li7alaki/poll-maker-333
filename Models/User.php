@@ -16,7 +16,7 @@ class User
 
     public static function All() {
         global $db;
-        return $db->query('SELECT * FROM users')->fetchAll(\PDO::FETCH_CLASS, self::class);
+        return $db->query('SELECT * FROM users ORDER BY time_created DESC')->fetchAll(\PDO::FETCH_CLASS, self::class);
     }
 
     public function create() {
@@ -79,12 +79,12 @@ class User
 
     public function polls() {
         global $db;
-        return $db->query('SELECT * FROM polls WHERE user_id = ' . $this->id)->fetchAll(\PDO::FETCH_CLASS, Poll::class);
+        return $db->query('SELECT * FROM polls WHERE user_id = ' . $this->id . ' ORDER BY time_created DESC')->fetchAll(\PDO::FETCH_CLASS, Poll::class);
     }
 
     public function votedPolls() {
         global $db;
-        return $db->query('SELECT * FROM polls WHERE id IN (SELECT poll_id FROM votes WHERE user_id = ' . $this->id . ')')->fetchAll(\PDO::FETCH_CLASS, Poll::class);
+        return $db->query('SELECT polls.* FROM polls JOIN votes ON polls.id = votes.poll_id WHERE votes.user_id = '.$this->id.' ORDER BY votes.vote_date DESC')->fetchAll(\PDO::FETCH_CLASS, Poll::class);
     }
 
     public static function emailExists($email) {
