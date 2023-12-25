@@ -14,6 +14,7 @@
         $admin = $_SESSION['user']->isAdmin();
         echo '<a href="profile.php">Profile</a>';
         echo '<a href="myPolls.php">My Polls</a>';
+        echo '<a href="activity.php">Activity</a>';
         echo '<a href="../Controllers/logout.php">Logout</a>';
     } else {
         echo '<a href="login.php">Login</a>';

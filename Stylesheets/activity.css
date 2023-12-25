@@ -1,0 +1,103 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(45,0,255,0.73);
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    margin: 100px 0 0;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+h1 {
+    margin: 0 0 20px;
+    font-size: 3rem;
+    color: white;
+}
+
+.poll {
+    width: 25%;
+    min-width: 300px;
+    height: fit-content;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 50px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.poll:hover {
+    scale: 1.1;
+    transition: 0.2s;
+    margin: 20px;
+    & .stats {
+        scale: 1.2;
+        border: 3px solid rgba(45,0,255,0.73);
+        background-color: white;
+        color: rgba(45,0,255,0.73);
+        transition: 0.2s;
+    }
+}
+
+.poll h2 {
+    text-align: center;
+    margin: 0 0 5px;
+    color: rgba(45,0,255,0.73);
+}
+
+.poll h3 {
+    text-align: center;
+    margin: 0 0 20px;
+    font-size: 1rem;
+    font-weight: lighter;
+    color: rgba(45,0,255,0.65);
+}
+
+p {
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+.expiry {
+    text-align: center;
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: lighter;
+    color: grey;
+}
+
+.stats {
+    transition: 0.2s;
+    font-size: 1.3rem;
+    background-color:  rgba(45,0,255,0.65);
+    width: fit-content;
+    padding: 7.5px 15px;
+    border-radius: 20px;
+    color: white;
+}
+
+
+@media screen and (max-width: 768px) {
+    .poll {
+        width: 40%;
+    }
+}

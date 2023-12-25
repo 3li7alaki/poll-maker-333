@@ -111,6 +111,11 @@ class User
         return $db->query('SELECT * FROM options WHERE id IN (SELECT option_id FROM votes WHERE user_id = ' . $this->id . ' AND poll_id = ' . $poll_id . ')')->fetchObject(Option::class);
     }
 
+    public function voteDetails($poll_id) {
+        global $db;
+        return $db->query('SELECT * FROM votes WHERE user_id = ' . $this->id . ' AND poll_id = ' . $poll_id)->fetchObject();
+    }
+
     public function voted($poll_id) {
         global $db;
         return $db->query('SELECT * FROM votes WHERE user_id = ' . $this->id . ' AND poll_id = ' . $poll_id)->rowCount() == 1;
